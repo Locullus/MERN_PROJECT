@@ -1,2 +1,4 @@
+# les commentaires dans le fichier .gitignore doivent être au début et commencent par #
+
 /node_modules
 /config/.env
