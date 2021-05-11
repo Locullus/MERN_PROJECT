@@ -7,18 +7,16 @@ router.get('/', (req, res) => {
     res.render('index.html', {title: 'Prochains objectifs de développement du site'});
 });
 
-
 // on crée une route qui va rediriger en fonction du paramêtre qui lui sera envoyer dans la requête
 router.get('/:id', (req, res) => {
     console.log(req.params.id);
     res.render('index.html', {title: req.params.id});
 });
 
+// mais cette route ne fonctionne plus : foo est considéré comme un params... (même replacé avant)
 router.get('/foo', (req, res) => {
     res.render('foo.html', {title: 'Foo page'});
 });
 
 // on définit router comme module et on l'exporte pour le rendre disponible dans index.js
 module.exports = router;
-
-// 'Prochains objectifs de développement du site'
