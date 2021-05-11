@@ -28,3 +28,8 @@ app.use(express.static(__dirname + '/public'));
 app.use('/', pageRouter);
 
 app.listen(process.env.PORT, () => console.log(`Server is running on port: ${process.env.PORT}`));
+
+// avant de merger je vérifie sur quelle branche je dois me positionner
+// merge from devrait signifier : intégrer une branche, donc il faudrait que je sois sur la branche qui reçoit
+// en l'occurence main (ce qui est le cas dans pycharm et donc devrait être le cas pour tout merge avec git...)
+// je vais donc me placer sur la branche de destination...
