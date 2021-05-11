@@ -1,12 +1,16 @@
 const express = require("express");
 
-// on  importe nunjucks
+// on  importe nunjucks pour le rendu
 const nunjucks = require('nunjucks');
 
 // le path du fichier des variables d'environnement doit être spécifié ici
 require('dotenv').config({path: './config/.env'});
 
+// on crée une instance d'Express
 const app= express();
+
+// on importe le module router
+const pageRouter = require('./routes/controller');
 
 // on configure nunjucks comme modèle de rendu pour /views et lui passe app en param
 nunjucks.configure('views', {
@@ -14,13 +18,7 @@ nunjucks.configure('views', {
     express: app
 });
 
-// NOTE : il faut déclarer req même si on ne l'utilise pas (il manquerait un param)
-app.get('/', (req, res) => {
-    res.render('index.html', {title: 'Main page'});
-});
-
-app.get('/foo', (req, res) => {
-    res.render('foo.html', {title: 'Foo page'});
-});
+// on définit un middleware pour configurer la racine du router
+app.use('/', pageRouter);
 
 app.listen(process.env.PORT, () => console.log(`Server is running on port: ${process.env.PORT}`));
