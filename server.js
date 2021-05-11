@@ -18,7 +18,6 @@ nunjucks.configure('views', {
     express: app
 });
 
-
 // middleware qui configure le répertoire des fichiers statiques (img, css, js)
 // NOTE : le path dans les fichiers html DOIT en tenir compte pour le compléter
 // ex : adapter : href="../public/css/base.css"> pour ceci : href="/css/base.css"

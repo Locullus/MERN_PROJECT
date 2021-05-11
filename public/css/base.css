@@ -13,17 +13,6 @@
     margin: 0;  /* je supprime les marges pour que le header s'applique sur toute la page */
   }
   
-  .listNumber {
-    list-style-type:decimal;
-    
-  } 
-  
-  .listAlpha {
-    list-style-type: lower-alpha;
-    padding: 0 5rem;
-  
-  }
-  
   header {      /* sert de conteneur en position relative pour le div "header_bg" incliné */
       position: fixed;
       width: 100%;    /* 100% du body lui-même fixé à 100% du viewport width */
@@ -60,6 +49,16 @@
   
     section {
       position: relative;
+      width: 66%;
+      margin-right: auto;
+    }
+
+    .listNumber {
+      list-style-type:decimal;      
+    } 
+    
+    .listAlpha {
+      list-style-type: lower-alpha;   
     }
   
     /* pour les référecnes des styles de code : https://zellwk.com/blog/crud-express-mongodb/ */
@@ -70,7 +69,7 @@
       border: 1px solid #ccc;
       background-color: #fafafa;
       font-size: 1.1rem;
-      line-height: 1.4;
+      line-height: 1.4rem;
       font-family: "Fira Mono", monospace;
     }
   
@@ -79,7 +78,7 @@
     word-break: break-word;
     display: block;
     font-size: .1.1rem;
-    line-height: 1.58;
+    line-height: 1.58rem;
     font-family: "Fira Mono", monospace;
     margin: 0;
     padding: .7rem 1.05rem;
@@ -121,14 +120,15 @@
                   0 -2px 3px rgb(114, 105, 105),  /* une ombre pour chaque côté, avec décallage dans une seule direction pour éviter que les ombres ne se superposent */
                   2px 0 3px rgb(114, 105, 105),
                   -2px 0 3px rgb(114, 105, 105);                
-      font-size: 1.5em;
-      line-height: 1.2em;
-      padding: 100px;
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      padding: 70px;
       background-color: rgb(204, 222, 233)
     }
   
     article h2 {
-      font-size: 2em;
+      font-size: 2.4rem;
+      line-height: 2.4rem;
       text-align: center;
       padding-bottom: 50px;
     }
