@@ -1,4 +1,2 @@
-# MERN_PROJECT
-développement back-end d'un réseau social
-
-npm install
+# Node et nunjucks
+développement d'une appli node rendue avec nunjucks
