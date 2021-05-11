@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nunjucks example</title>
-    </head>
-    <body>
-        {% block content %}
-        {{title}}
-        {% endblock %}
-    </body>
-</html>
+{% extends "base.html" %}
+
+{# This is comment #}
+{% block content %}
+    <article>
+        <h2>{{title}}</h2>
+        <p>Le prochain objectif est de développer ce site avec Flask, ceci afin de composer le contenu des pages en fonction des routes et de la recherche.</p>
+        <p>Ce qui veut dire qu'il faut ajouter un petit formulaire - un input - avec des regex afin de composer les pages en fonction de la demande.</p>
+        <p>Il faut aussi ajouter un menu quelque part, il accès rapide à différentes parties du site notamment des articles sur git.</p>
+        <p>On évitera ainsi de répéter inutilement du code, comme c'est actuellement le cas pour le menu Header. C'est l'application des principes que je trouvais si utiles avec php.</p>
+        <p>J'aimerais aussi ajouter quelques mises en forme css. Ce seront des classes qui pourront être ainsi appelées sur n'importe quel élément. Par exemple, si je veux insérer un encadré représentant une ligne de commande :</p>
+        <p class="CLI"><span class="comment">// déclaration d'un repo local</span><br>
+        <span>console</span><span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="string">'Puisses Node être avec toi'</span><span class="punctuation">)</span></p>
+    </article>
+{% endblock %}

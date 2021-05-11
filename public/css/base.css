@@ -1,0 +1,170 @@
+:root {                 /* pseudo-classe qui cible la racine de l'arbre représentant le document (plus de poids que l'élément <html> */
+    font-size: 16px;      /* on fixe les fonts à la taille moyenne par défaut des navigateurs pour garder une homogénéité du rendu */
+  }                       /* va servir de référence pour les root em (unité de mesure "rem") */
+  
+  body {
+    font-family: 'Shippori Mincho B1', serif;
+    width: 100vw;   /* le body occupe la totalité du viewport width */
+    overflow-x: hidden;   /* cache la barre de défilement horizontal */
+    box-sizing: border-box;
+  }
+  
+  body, section, header, h1 {
+    margin: 0;  /* je supprime les marges pour que le header s'applique sur toute la page */
+  }
+  
+  .listNumber {
+    list-style-type:decimal;
+    
+  } 
+  
+  .listAlpha {
+    list-style-type: lower-alpha;
+    padding: 0 5rem;
+  
+  }
+  
+  header {      /* sert de conteneur en position relative pour le div "header_bg" incliné */
+      position: fixed;
+      width: 100%;    /* 100% du body lui-même fixé à 100% du viewport width */
+      height: 250px;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    /* on crée ici un bloc avec une forme inclinée en utilisant la méthode transform: skewY() qui prend en paramètre une valeur d'angle */
+    .headerBg {
+      box-shadow: 6px 6px 20px;     /* ajout de l'ombre pour donner un effet 3D ou d'épaisseur */
+      position: absolute;
+      width: 100%;
+      height: 85%;                  /* on n'utilise pas toute la hauteur du conteneur pour éviter que l'ombrage soit rogné */
+      background-color: #ff9d2f;  /* une seule couleur de fond plutôt qu'un gradient pour éviter l'effet de crénelage */
+      transform: skewY(4deg);       /* avec une valeur négative le triangle est inversé, utile pour un bas de page */
+      transform-origin: top right;  /* top left pour inverser la direction de l'angle */
+    }
+  
+    .underHeader {
+      height: 300px;      /* en mettant un div vide avec une hauteur fixée à la taille du header fixe pour pousser vers le bas la section */
+    }                     /* on pourrait aussi fixer la position: relative de section et mettre un top: 200px; pour le même résultat */
+    
+    h1 {
+      padding: 30px 0;
+      font-size: 2rem;     /* on définit la taille des fonts relativement à la déclaration rem (root em) de :root qui sert de référence pour tout le document */
+      text-align: center;     /* ceci à la différence de "em" qui change la taille relativement au parent direct */
+    }
+    
+    header h1 {
+      position: relative;
+      color: white;
+    }
+  
+    section {
+      position: relative;
+    }
+  
+    /* pour les référecnes des styles de code : https://zellwk.com/blog/crud-express-mongodb/ */
+    code {
+      display: inline-block;
+      margin: 0 .25rem 0 0;
+      padding: 0 .5rem;
+      border: 1px solid #ccc;
+      background-color: #fafafa;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      font-family: "Fira Mono", monospace;
+    }
+  
+  .CLI {
+    word-wrap: break-word;
+    word-break: break-word;
+    display: block;
+    font-size: .1.1rem;
+    line-height: 1.58;
+    font-family: "Fira Mono", monospace;
+    margin: 0;
+    padding: .7rem 1.05rem;
+    border: 0;
+    color: #eee;
+    text-align: left;
+    hyphens: none;
+    tab-size: 2;
+    background: #2d2d2d;
+  }
+  
+  .comment {
+    color: #999;
+  }
+  
+  .punctuation {
+    color: #ccc;
+  }
+  
+  .function {
+    color: #f08d49;
+  }
+  
+  .string {
+    color: #7ec699;
+  }
+  
+  .htmlElement {
+    color: #e2777a;
+  }
+  
+    /* ceci est le conteneur des articles. Il fixe les marges et le fond grisé. Il a une largeur fixe mais une hauteur qui s'adapte au contenu */
+    article {
+      box-sizing: border-box;
+      width: 80%;
+      margin: 50px auto;
+      border: 1px solid rgb(77, 70, 70);
+      box-shadow: 0 2px 3px rgb(114, 105, 105),   /* on crée une ombre qui se diffuse sur tous les côtés de la boîte */
+                  0 -2px 3px rgb(114, 105, 105),  /* une ombre pour chaque côté, avec décallage dans une seule direction pour éviter que les ombres ne se superposent */
+                  2px 0 3px rgb(114, 105, 105),
+                  -2px 0 3px rgb(114, 105, 105);                
+      font-size: 1.5em;
+      line-height: 1.2em;
+      padding: 100px;
+      background-color: rgb(204, 222, 233)
+    }
+  
+    article h2 {
+      font-size: 2em;
+      text-align: center;
+      padding-bottom: 50px;
+    }
+  
+    /* on crée ici un bloc en forme de chevron avec cette fois 2 angles en utilisant la propriété clip-path: polygon */
+    aside {
+      width: 100vw;
+      height: 600px;
+      /*background-color: rgb(7, 73, 160);*/
+      background-color: #5b78c7;
+      color:lightcyan;
+      clip-path: polygon(0 0, 100% 0, 100% 76%, 50% 100%, 0 76%);   /* chacune des coordoonées est un point du conteneur ; ici 5 points pour un polygon */
+    }
+  
+    footer {                                /* footer arrondi */
+      position: relative;
+      width: 100vw;
+      height: 200px;
+      bottom: -200px;                       /* on déclare une valeur négative à -200px de la fin du document */
+      background-image: linear-gradient(#6ebaec, #478aa8);  /* on crée un dégradé de couleur */
+      border-top-left-radius: 50% 75%;      /* radius avec deux valeurs (pour décrire une ellipse ?) */
+      border-top-right-radius: 50% 75%;
+    }
+  
+    footer p {
+      padding: 10px 0;
+      font: 1.5rem "Arial";
+      color: white;
+      text-align: center;
+      color: white;
+    }
+  
+    /* ajouter un effet landing depuis le haut sur le header
+      ainsi qu'une réduction du header au scroll : le ramener à 150px ?
+    développer cete page directement en grid et avec grid comme sujet
+    on fera de même avec une page spécialement écrite pour la techno flexbox
+    
+    Pour cacher les débordements sur les côtés on peut recouvrir avec des panneaux de la couleur du fond (solution cosmétique...)
+    Mais on peut également inclure tout le contenu de la page dans un div qui fixera les dimensions maximales de la page, par exemple 1200px. Semble être la meilleure solution */

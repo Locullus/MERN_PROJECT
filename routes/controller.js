@@ -4,7 +4,7 @@ const router = express.Router();
 
 // NOTE : il faut déclarer req même si on ne l'utilise pas (il manquerait un param)
 router.get('/', (req, res) => {
-    res.render('index.html', {title: 'Main page'});
+    res.render('index.html', {title: 'Prochains objectifs de développement du site'});
 });
 
 router.get('/foo', (req, res) => {
