@@ -27,7 +27,7 @@
     position: absolute;
     width: 100%;
     height: 85%;                  /* on n'utilise pas toute la hauteur du conteneur pour éviter que l'ombrage soit rogné */
-    background-color: #ff9d2f;  /* une seule couleur de fond plutôt qu'un gradient pour éviter l'effet de crénelage */
+    background-color: #2BE396;  /* une seule couleur de fond plutôt qu'un gradient pour éviter l'effet de crénelage */
     transform: skewY(4deg);       /* avec une valeur négative le triangle est inversé, utile pour un bas de page */
     transform-origin: top right;  /* top left pour inverser la direction de l'angle */
   }
@@ -60,7 +60,7 @@
     right: 50px;
     border: none;
     border-radius: 5px;
-    background-color: rgb(50, 53, 226);
+    background-color: #DB8B18;
     z-index: 2;
   }
 
@@ -159,7 +159,7 @@
     width: 100vw;
     height: 600px;
     /*background-color: rgb(7, 73, 160);*/
-    background-color: #5b78c7;
+    background-color: #30AAFD;
     color:lightcyan;
     clip-path: polygon(0 0, 100% 0, 100% 76%, 50% 100%, 0 76%);   /* chacune des coordonnées est un point du conteneur ; ici 5 points pour un polygon */
   }
@@ -169,7 +169,7 @@
     width: 100vw;
     height: 200px;
     bottom: -200px;                       /* on déclare une valeur négative à -200px de la fin du document */
-    background-image: linear-gradient(#6ebaec, #478aa8);  /* on crée un dégradé de couleur */
+    background-image: linear-gradient(#188AD6, #1CA3FC);  /* on crée un dégradé de couleur */
     border-top-left-radius: 50% 75%;      /* radius avec deux valeurs (pour décrire une ellipse ?) */
     border-top-right-radius: 50% 75%;
   }
