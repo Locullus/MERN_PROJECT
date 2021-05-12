@@ -19,6 +19,13 @@
         </header>
         <div class="underHeader"></div>
         <section>
+            <aside class="menu">
+                <ul>
+                    <li><a href="page1">page1</a></li>
+                    <li><a href="page2">page2</a></li>
+                    <li><a href="foo">foo</a></li>
+                </ul>
+            </aside>
             <article>                    
                 <h2>Comment lier une branche distante à un dépôt local</h2>
                     <p>Si en théorie Git impose une séparation claire entre les branches locales et distantes, en pratique il peut être avantageux de les lier, les considérant ainsi comme des copies toujours fidèles l'une de l'autre.</p>     
@@ -33,11 +40,7 @@
                             <li>réciproquement, si 4 commits se trouvent sur la branche distante et que vous n'avez fait aucun <code>pull</code>, alors git vous précisera que votre branche locale est "en retard de 4 commits" par rapport à la branche distante.</li>
                         </ol><p>                              
             </article>
-            <aside>
-                <a href="page1">page1</a>
-                <a href="page2">page2</a>
-                <a href="../foo">foo</a>
-            </aside>
+            <aside class="chevron"></aside>
             {% block content %}           
 
             {% endblock %}
